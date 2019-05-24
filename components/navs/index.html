@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 实例 - 响应式的导航栏</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container-fluid"> 
+	<div class="collapse navbar-collapse" id="example-navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li><a onclick="javascript:test0();">alert tab</a></li>
+			<li><a onclick="javascript:test1();">Tab1</a></li>
+			<li><a onclick="javascript:test2();">Tab2</a></li>
+			<li><a onclick="javascript:test3();">Tab3</a></li>
+		</ul>
+	</div>
+    <div id="tab1_div" style="display: none"></div>
+    <div id="tab2_div" style="display: none"></div>
+    <div id="tab3_div" style="display: none"></div>
+	</div>
+</nav>
+</body>
+<script>
+function test0() {
+    alert("我是行间事件");
+}
+function test1() {
+    document.getElementById("tab1_div").style.display="";
+    document.getElementById("tab1_div").innerHTML = "<object type='text/html' data='tab1.html' width='100%' height='100%'></object>";
+    document.getElementById("tab2_div").style.display="none";
+    document.getElementById("tab3_div").style.display="none";
+}
+function test2() {
+    document.getElementById("tab1_div").style.display="none";
+    document.getElementById("tab2_div").style.display="";
+    document.getElementById("tab2_div").innerHTML = "<object type='text/html' data='tab2.html' width='100%' height='100%'></object>";
+    document.getElementById("tab3_div").style.display="none";
+}
+function test3() {
+    document.getElementById("tab1_div").style.display="none";
+    document.getElementById("tab2_div").style.display="none";
+    document.getElementById("tab3_div").style.display="";
+    document.getElementById("tab3_div").innerHTML = "<object type='text/html' data='tab3.html' width='100%' height='100%'></object>";
+}
+</script>
+</html>
